@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: ai-cost-optimization-platform}
+spec:
+ replicas: 2
+ selector: {matchLabels: {app: ai-cost-optimization-platform}}
+ template:
+  metadata: {labels: {app: ai-cost-optimization-platform}}
+  spec:
+   containers:
+   - name: api
+     image: ai-cost-optimization-platform:latest
+     ports: [{containerPort: 8000}]
+     readinessProbe: {httpGet: {path: /health/ready, port: 8000}}
+     livenessProbe: {httpGet: {path: /health/live, port: 8000}}
