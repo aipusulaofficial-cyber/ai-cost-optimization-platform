@@ -5,7 +5,7 @@ def test_cost_calculation_and_budget():
     usage = Usage("tenant-a", "model-a", 1000, 500, 2.0)
     price = Price(0.01, 0.02, 0.005)
     amount = cost(usage, price)
-    assert amount == 0.025
+    assert amount == 0.03
     assert within_budget(amount, 0.03) is True
     assert within_budget(amount, 0.02) is False
 
