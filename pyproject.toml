@@ -12,4 +12,4 @@ dev=["pytest>=8","pytest-cov>=6","hypothesis>=6","ruff>=0.7,<1"]
 pythonpath=["."]
 
 [tool.setuptools]
-py-modules=["service"]
+py-modules=["cost_domain","cost_platform","observability","pricing_store","service"]
