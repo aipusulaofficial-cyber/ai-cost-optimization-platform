@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import json
 from cost_domain import Usage,Price,cost,attribute,within_budget
 p=Price(0.01,0.02,0.1); u=Usage("tenant-a","model",1000,500,2); amount=cost(u,p); totals=attribute([u],{"model":p}); report={"cost":amount,"tenant_total":totals["tenant-a"],"within_0_05":within_budget(amount,0.05),"within_0_1":within_budget(amount,0.1)}
