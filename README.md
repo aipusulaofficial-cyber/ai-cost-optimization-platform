@@ -29,3 +29,6 @@ CI, production tests and security/SBOM checks are executable delivery gates.
 - Decisions: [ADRs](ADRs/)
 
 This README documents the project-specific engineering surface; implementation remains the source of truth.
+
+## Portfolio evidence
+[Portfolio evidence map](docs/PORTFOLIO_EVIDENCE.md) — executable proof, architecture mapping and reviewable CI evidence.
