@@ -23,6 +23,7 @@ jobs:
       - name: Execute domain evidence
         run: |
           mkdir -p artifacts
+          set -o pipefail
           python benchmarks/cost_evidence.py | tee artifacts/cost-domain-evidence.json
       - name: Validate evidence artifact
         run: python -m json.tool artifacts/cost-domain-evidence.json >/dev/null
