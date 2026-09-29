@@ -21,3 +21,8 @@ jobs:
           path: .
           format: cyclonedx-json
           output-file: sbom.cdx.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: cyclonedx-sbom
+          path: sbom.cdx.json
+          if-no-files-found: error
