@@ -1,5 +1,10 @@
 # AI Cost Optimization Platform
 
+[![CI](https://github.com/aipusulaofficial-cyber/ai-cost-optimization-platform/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/aipusulaofficial-cyber/ai-cost-optimization-platform/actions/workflows/ci.yml)
+[![Production Tests](https://github.com/aipusulaofficial-cyber/ai-cost-optimization-platform/actions/workflows/production-tests.yml/badge.svg?branch=main)](https://github.com/aipusulaofficial-cyber/ai-cost-optimization-platform/actions/workflows/production-tests.yml)
+[![Supply Chain](https://github.com/aipusulaofficial-cyber/ai-cost-optimization-platform/actions/workflows/supply-chain.yml/badge.svg?branch=main)](https://github.com/aipusulaofficial-cyber/ai-cost-optimization-platform/actions/workflows/supply-chain.yml)
+
+
 A production-oriented control plane for making AI workload cost behavior explicit, measurable and enforceable.
 
 ## Problem
