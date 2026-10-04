@@ -17,7 +17,7 @@ def test_valid_rate_persists(tmp_path):
 
 
 def test_production_cost_domain_rejects_nonfinite_values():
-    from cost_domain import Price, Usage, cost, within_budget
+    from cost_domain import Price, Usage, within_budget
     with pytest.raises(ValueError):
         Price(float("nan"), 0.0, 0.0)
     with pytest.raises(ValueError):
