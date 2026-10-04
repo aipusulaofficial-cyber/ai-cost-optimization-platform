@@ -69,13 +69,12 @@ def handle(r: Request) -> dict[str, float | str | bool]:
                 float(r.payload.get("compute_per_s", 0)),
             )
             amount = cost(usage, price)
+            raw_budget = r.payload.get("budget")
+            budget_ok = True if raw_budget is None else within_budget(amount, float(raw_budget))
             return {
                 "tenant": usage.tenant,
                 "cost": amount,
-                "within_budget": within_budget(
-                    amount,
-                    float(r.payload.get("budget", float("inf"))),
-                ),
+                "within_budget": budget_ok,
             }
         except (ValueError, KeyError, RuntimeError) as exc:
             raise HTTPException(status_code=400, detail=str(exc)) from exc
