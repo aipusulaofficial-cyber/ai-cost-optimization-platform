@@ -13,10 +13,18 @@ class PricingStore:
             )
 
     def put(self, provider, model, input_per_1k, output_per_1k):
-        if not provider or not model:
-            raise ValueError("provider and model required")
+        if not isinstance(provider, str) or not provider.strip():
+            raise ValueError("provider must be non-empty")
+        if not isinstance(model, str) or not model.strip():
+            raise ValueError("model must be non-empty")
         rates = (input_per_1k, output_per_1k)
-        if any(not math.isfinite(rate) or rate < 0 for rate in rates):
+        if any(
+            isinstance(rate, bool)
+            or not isinstance(rate, (int, float))
+            or not math.isfinite(rate)
+            or rate < 0
+            for rate in rates
+        ):
             raise ValueError("pricing must be finite and non-negative")
         with sqlite3.connect(self.path) as db:
             db.execute(
